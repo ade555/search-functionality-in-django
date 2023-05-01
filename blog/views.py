@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
+from django.db.models import Q
 from .models import Post
 from .forms import PostForm
 
@@ -33,3 +34,15 @@ def search_post(request):
         return render(request, 'blog/search_post.html', {'query':search_query, 'posts':posts})
     else:
         return render(request, 'blog/search_post.html',{})
+
+
+"""
+Uncomment below to search by more than one field.
+"""
+# def search_post(request):
+#     if request.method == 'POST':
+#         search_query = request.POST['search_query']
+#         posts = Post.objects.filter(Q(title__icontains=search_query) | Q(title__icontains=search_query))
+#         return render(request, 'blog/search_post.html', {'query':search_query, 'posts':posts})
+#     else:
+#         return render(request, 'blog/search_post.html',{})
