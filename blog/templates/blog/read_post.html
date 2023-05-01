@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center my-4">{{post.title}}</h1>
+    <small><strong>Published by {{post.author}} on {{ post.date_published|date:"Y-m-d" }}</strong></small>
+    <p class="text-start">{{post.content}}</p>
+</div>
+{% endblock content %}
