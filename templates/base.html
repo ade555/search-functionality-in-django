@@ -21,9 +21,6 @@
                 <a class="nav-link active" aria-current="page" href="{% url 'blog-list-view' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="{% url 'blog-add-post' %}">Add Post</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link active">Disabled</a>
               </li>
             </ul>
@@ -35,15 +32,6 @@
           </div>
         </div>
       </nav>
-
-      {% if messages %}
-    {% for message in messages %}
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ message }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    {% endfor %}
-{% endif %}
       {% block content %}
       
       {% endblock content %}
